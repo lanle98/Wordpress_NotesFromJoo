@@ -1,5 +1,48 @@
 /* 
-Theme Name: Test Theme
+Theme Name: Notes From Joo
 Author: Lan Le
 */
+
+.latest-posts{
+    position: relative;
+    
+}
+
+.latest-post::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: black;
+    opacity: .4;
+    z-index: 20;
+}
+
+.latest-post{
+    overflow: hidden;
+}
+
+.latest-post img{
+
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    position: relative;
+}
+
+.latest-post:hover img{
+
+    transform: scale(1.2);
+    transition: .3s;
+    
+}
+
+.latest-post .title{
+    position: absolute;
+    bottom: 0;
+    z-index: 20;
+    color: white;
+    padding: 20px;
+    width: 75%;
+}
 
