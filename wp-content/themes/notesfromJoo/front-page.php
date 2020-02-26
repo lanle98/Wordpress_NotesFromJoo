@@ -1,16 +1,56 @@
 <?php get_header(); ?>
+<section class="jumbotron jumbotron-fluid">
+    <div class="slider-wrapper">
+        <div class="slide-show px-0">
 
-<div class="jumbotron">
+            <?php $query_hero = new WP_Query(
+                array(
+                    'posts_per_page' => 4,
+                    'orderby' => 'title'
+                )
+            ) ?>
+
+            <?php if ($query_hero->have_posts()) : while ($query_hero->have_posts()) : $query_hero->the_post(); ?>
+                    <?php $img =  get_field('hero')['image-vertical']; ?>
+
+                    <div class="hero p-0">
+                        <img class="img-fluid" src="<?php echo $img ?>" alt="hero-image" />
+                        <h2><?php the_title() ?></h2>
+
+                    </div>
 
 
 
-</div>
+            <?php endwhile;
+            endif; ?>
+
+
+        </div>
+    </div>
+
+    <div class="slider-btn-left px-5">
+        <i class="fas fa-angle-left"></i>
+    </div>
+    <div class="slider-btn-right px-5">
+        <i class="fas fa-angle-right"></i>
+    </div>
+
+</section>
+
+
+
 
 
 <div class="container">
+    <!-- latest-post description -->
+    <?php echo $latest_post_desc = get_field('latest_posts'); ?>
+    <h2><?php echo $latest_post_desc['title'] ?></h2>
 
+
+
+    <!-- latest posts -->
     <div class="row latest-posts justify-content-center">
-        <?php $query_posts = new WP_Query(
+        <?php $query_latest_posts = new WP_Query(
             array(
                 'posts_per_page' => 3,
                 'orderby' => 'date',
@@ -20,7 +60,7 @@
             )
         ) ?>
 
-        <?php if ($query_posts->have_posts()) : while ($query_posts->have_posts()) : $query_posts->the_post(); ?>
+        <?php if ($query_latest_posts->have_posts()) : while ($query_latest_posts->have_posts()) : $query_latest_posts->the_post(); ?>
                 <?php $field = get_field('hero');
                 $location = $field['location'];
                 $image = $field['image-vertical'];
@@ -31,7 +71,7 @@
 
 
 
-                <a href="<?php echo get_permalink() ?>" class="col-12 col-md-3 p-0 m-3 latest-post">
+                <a href="<?php echo get_permalink() ?>" class="col-11 col-md-3 p-0 m-3 latest-post">
                     <img class="img-fluid m-0" src='<?php echo $image ?>' alt="image" />
                     <div class="title">
                         <h1><?php the_title() ?></h1>
@@ -54,19 +94,13 @@
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 
-            <h2><?php the_title(); ?></h2>
+            <h2><?php the_content(); ?></h2>
 
 
     <?php endwhile;
     endif; ?>
 
 
-
-    <div class="row justify-content-center">
-        <div class="bg-primary col-3 m-2">b</div>
-        <div class="bg-primary col-3 m-2">c</div>
-        <div class="bg-primary col-3 m-2">a</div>
-    </div>
 
 
 </div>

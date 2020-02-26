@@ -1,4 +1,8 @@
+RewriteEngine On
+RewriteBase /
 
+# redirect html pages to the root domain
+RewriteRule ^index\.html$ / [NC,R,L]
 
 # BEGIN WordPress
 # The directives (lines) between `BEGIN WordPress` and `END WordPress` are
