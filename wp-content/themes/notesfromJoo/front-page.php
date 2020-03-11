@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section class="jumbotron jumbotron-fluid">
+<section class="jumbotron jumbotron-fluid p-0 m-0">
     <div class="slider-wrapper">
         <div class="slide-show px-0">
 
@@ -46,8 +46,8 @@
 
 
 
-    <section id="lastest-posts">
-        <div class="desc">
+    <section id="latest-posts">
+        <div class="desc m-5">
             <?php the_post(); ?>
             <h2 class="text-center p-3"><?php echo get_field('latest-posts')['title'] ?></h2>
             <p class="text-center"><?php echo get_field('latest-posts')['description'] ?></p>
@@ -57,7 +57,7 @@
 
 
         </div>
-        <div class="row latest-posts justify-content-center">
+        <div class="row posts justify-content-center">
             <?php $query_latest_posts = new WP_Query(
                 array(
                     'posts_per_page' => 3,
@@ -75,12 +75,12 @@
                     $image = $field['image-vertical'];
 
                     ?>
-                    <br>
 
 
 
 
-                    <a href="<?php echo get_permalink() ?>" class="col-11 col-md-3 p-0 m-3 latest-post">
+
+                    <a href="<?php echo get_permalink() ?>" class="col-11 col-md-3 m-3 p-0 post">
                         <img class="img-fluid m-0" src='<?php echo $image ?>' alt="image" />
                         <div class="title">
                             <h1><?php the_title() ?></h1>
@@ -105,17 +105,17 @@
 
 
     <section id="featured-posts">
-        <div class="desc   m-5">
+        <div class="desc m-5">
 
             <?php the_post(); ?>
             <h2 class="text-center p-3"><?php echo get_field('featured-posts')['title'] ?></h2>
             <p class="text-center"><?php echo get_field('featured-posts')['description'] ?></p>
 
         </div>
-        <div class="row latest-posts justify-content-center">
+        <div class="row posts justify-content-center">
             <?php $query_latest_posts = new WP_Query(
                 array(
-                    'posts_per_page' => 3,
+                    'posts_per_page' => 4,
                     'orderby' => 'date',
                     'order' => "ASC",
 
@@ -129,13 +129,13 @@
                     $image = $field['image-vertical'];
 
                     ?>
-                    <br>
 
 
 
 
-                    <a href="<?php echo get_permalink() ?>" class="col-11 col-md-3 p-0 m-3 latest-post">
-                        <img class="img-fluid m-0" src='<?php echo $image ?>' alt="image" />
+
+                    <a href="<?php echo get_permalink() ?>" class="col-11 col-md-5 m-3 p-0 post">
+                        <img class="img-fluid" src='<?php echo $image ?>' alt="image" />
                         <div class="title">
                             <h1><?php the_title() ?></h1>
                             <h3><?php echo $location; ?>, <?php echo get_the_category()[0]->name ?></h3>

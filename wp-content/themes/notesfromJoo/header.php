@@ -19,7 +19,7 @@
             array(
                 'container' => "nav",
                 'container_class' => 'col-12',
-                "menu_class" => "nav justify-content-center",
+                "menu_class" => "nav justify-content-center p-4",
                 'theme_location' => 'header-menu',
 
 
