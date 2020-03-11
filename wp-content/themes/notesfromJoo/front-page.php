@@ -43,62 +43,116 @@
 
 <div class="container">
     <!-- latest-post description -->
-    <?php echo $latest_post_desc = get_field('latest_posts'); ?>
-    <h2><?php echo $latest_post_desc['title'] ?></h2>
 
 
 
-    <!-- latest posts -->
-    <div class="row latest-posts justify-content-center">
-        <?php $query_latest_posts = new WP_Query(
-            array(
-                'posts_per_page' => 3,
-                'orderby' => 'date',
-                'order' => "DESC",
-
-
-            )
-        ) ?>
-
-        <?php if ($query_latest_posts->have_posts()) : while ($query_latest_posts->have_posts()) : $query_latest_posts->the_post(); ?>
-                <?php $field = get_field('hero');
-                $location = $field['location'];
-                $image = $field['image-vertical'];
-
-                ?>
-                <br>
-
-
-
-
-                <a href="<?php echo get_permalink() ?>" class="col-11 col-md-3 p-0 m-3 latest-post">
-                    <img class="img-fluid m-0" src='<?php echo $image ?>' alt="image" />
-                    <div class="title">
-                        <h1><?php the_title() ?></h1>
-                        <h3><?php echo $location; ?>, <?php echo get_the_category()[0]->name ?></h3>
-                    </div>
-                </a>
+    <section id="lastest-posts">
+        <div class="desc">
+            <?php the_post(); ?>
+            <h2 class="text-center p-3"><?php echo get_field('latest-posts')['title'] ?></h2>
+            <p class="text-center"><?php echo get_field('latest-posts')['description'] ?></p>
 
 
 
 
 
-        <?php endwhile;
-        endif; ?>
-
-    </div>
-
-
-
-
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        </div>
+        <div class="row latest-posts justify-content-center">
+            <?php $query_latest_posts = new WP_Query(
+                array(
+                    'posts_per_page' => 3,
+                    'orderby' => 'date',
+                    'order' => "DESC",
 
 
-            <h2><?php the_content(); ?></h2>
+                )
+            ) ?>
 
 
-    <?php endwhile;
-    endif; ?>
+            <?php if ($query_latest_posts->have_posts()) : while ($query_latest_posts->have_posts()) : $query_latest_posts->the_post(); ?>
+                    <?php $field = get_field('hero');
+                    $location = $field['location'];
+                    $image = $field['image-vertical'];
+
+                    ?>
+                    <br>
+
+
+
+
+                    <a href="<?php echo get_permalink() ?>" class="col-11 col-md-3 p-0 m-3 latest-post">
+                        <img class="img-fluid m-0" src='<?php echo $image ?>' alt="image" />
+                        <div class="title">
+                            <h1><?php the_title() ?></h1>
+                            <h3><?php echo $location; ?>, <?php echo get_the_category()[0]->name ?></h3>
+                        </div>
+
+
+                    </a>
+
+
+
+
+
+            <?php endwhile;
+            endif; ?>
+
+        </div>
+
+    </section>
+
+
+
+
+    <section id="featured-posts">
+        <div class="desc   m-5">
+
+            <?php the_post(); ?>
+            <h2 class="text-center p-3"><?php echo get_field('featured-posts')['title'] ?></h2>
+            <p class="text-center"><?php echo get_field('featured-posts')['description'] ?></p>
+
+        </div>
+        <div class="row latest-posts justify-content-center">
+            <?php $query_latest_posts = new WP_Query(
+                array(
+                    'posts_per_page' => 3,
+                    'orderby' => 'date',
+                    'order' => "ASC",
+
+
+                )
+            ) ?>
+
+            <?php if ($query_latest_posts->have_posts()) : while ($query_latest_posts->have_posts()) : $query_latest_posts->the_post(); ?>
+                    <?php $field = get_field('hero');
+                    $location = $field['location'];
+                    $image = $field['image-vertical'];
+
+                    ?>
+                    <br>
+
+
+
+
+                    <a href="<?php echo get_permalink() ?>" class="col-11 col-md-3 p-0 m-3 latest-post">
+                        <img class="img-fluid m-0" src='<?php echo $image ?>' alt="image" />
+                        <div class="title">
+                            <h1><?php the_title() ?></h1>
+                            <h3><?php echo $location; ?>, <?php echo get_the_category()[0]->name ?></h3>
+                        </div>
+
+
+                    </a>
+
+
+
+
+
+            <?php endwhile;
+            endif; ?>
+
+        </div>
+    </section>
 
 
 

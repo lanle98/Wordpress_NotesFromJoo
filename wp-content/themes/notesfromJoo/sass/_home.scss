@@ -24,11 +24,16 @@
         height: 450px;
         object-fit: cover;
         position: relative;
+        transition: .5s;
     }
 
     &:hover img{
         transform: scale(1.2);
-        transition: .5s;
+        
+    }
+
+    &:not(:hover){
+        transform: scale(1);
     }
 
     .title{
@@ -38,6 +43,10 @@
         color: white;
         padding: 20px;
         width: 75%;
+
+        h3{
+            font-size: 1.5rem;
+        }
     }
 }
 
@@ -45,7 +54,7 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-    background: black;
+    background: red;
 }
 
 .slider-wrapper{
@@ -125,6 +134,8 @@
         transition: .2s;
     }
 }
+
+
 
 @media screen and (min-width: 768px) {
     .jumbotron{
