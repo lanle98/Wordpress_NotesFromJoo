@@ -58,7 +58,7 @@
         content: '';
         position: absolute;
         width: 100%;
-        height: 30%;
+        height: 40%;
         bottom: 0;
         background: linear-gradient(0deg, black, rgba(white,0));
        opacity: .6;
@@ -68,8 +68,18 @@
 }
 
 #featured-posts{
+
+
     img{
         height: 20rem;
+    }
+
+    .title{
+        h2{
+            border-top: 1px solid;
+            padding-top: .5em;
+        }
+       
     }
 }
 
@@ -164,11 +174,40 @@
     }
 }
 
+.btn{
+    background: none;
+    border:1px solid $blue;
+    color:$blue !important;
+
+    &:hover{
+        background: $blue;
+        color: $white !important;
+        transition: .5s;
+    }
+}
+
+.instagram{
+    background: $blue;
+    .title{
+        color: $white;
+        border-bottom: solid 1px $white;
+    }
+
+   
+}
+
+.sbi_header_text{
+    h3{
+        color: $white;
+    }
+}
+
 
 
 @media screen and (min-width: 768px) {
     .jumbotron{
         .hero{
+            height: 500px;
             h2{
                 font-size: 5rem;
             }

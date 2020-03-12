@@ -1,0 +1,158 @@
+.posts {
+  position: relative;
+}
+.post {
+  overflow: hidden;
+  position: relative;
+}
+.post img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  position: relative;
+  transition: 0.5s;
+}
+.post:hover {
+  transform: scale(1);
+}
+.post:hover img {
+  transform: scale(1.2);
+}
+.post:not(:hover) {
+  transform: scale(1);
+}
+.post .title {
+  position: absolute;
+  bottom: 0;
+  z-index: 20;
+  color: white;
+  padding: 20px;
+  width: 75%;
+}
+.post .title h3 {
+  font-size: 1.5rem;
+}
+.post::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  bottom: 0;
+  background: linear-gradient(0deg, black, rgba(255, 255, 255, 0));
+  opacity: 0.6;
+  z-index: 20;
+  padding: 0 2em;
+}
+#featured-posts img {
+  height: 20rem;
+}
+#featured-posts .title h2 {
+  border-top: 1px solid;
+  padding-top: 0.5em;
+}
+#latest-posts img {
+  height: 30rem;
+}
+.jumbotron {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: none;
+}
+.slider-wrapper {
+  overflow: hidden;
+}
+.slide-show {
+  width: 400%;
+  display: flex;
+  position: relative;
+  padding: 0;
+}
+.slide-show .hero {
+  height: 400px;
+  width: 100%;
+}
+.slide-show .hero h2 {
+  position: absolute;
+  bottom: 0;
+  z-index: 20;
+  margin: 2rem;
+  font-size: 3rem;
+  color: white;
+  width: 15%;
+}
+.slide-show .hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.slider-btn-left {
+  position: absolute;
+  color: black;
+  left: 0;
+  top: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 100%);
+  width: 5%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 180;
+}
+.slider-btn-right {
+  position: absolute;
+  color: black;
+  right: 0;
+  top: 0;
+  background: linear-gradient(-90deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 100%);
+  width: 5%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 180;
+}
+.fas {
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+}
+.fas:hover {
+  font-size: 4rem;
+  transition: 0.2s;
+}
+.btn {
+  background: none;
+  border: 1px solid #008da9;
+  color: #008da9 !important;
+}
+.btn:hover {
+  background: #008da9;
+  color: white !important;
+  transition: 0.5s;
+}
+.instagram {
+  background: #008da9;
+}
+.instagram .title {
+  color: white;
+  border-bottom: solid 1px white;
+}
+.sbi_header_text h3 {
+  color: white;
+}
+@media screen and (min-width: 768px) {
+  .jumbotron .hero {
+    height: 500px;
+  }
+  .jumbotron .hero h2 {
+    font-size: 5rem;
+  }
+}
+header a {
+  color: #464646;
+  font-size: 1rem;
+  font-weight: lighter;
+}
+footer {
+  background: #464646;
+}

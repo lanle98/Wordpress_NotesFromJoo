@@ -13,11 +13,11 @@
             <?php if ($query_hero->have_posts()) : while ($query_hero->have_posts()) : $query_hero->the_post(); ?>
                     <?php $img =  get_field('hero')['image-vertical']; ?>
 
-                    <div class="hero p-0">
+                    <a href="<?php echo get_permalink() ?>" class="hero p-0">
                         <img class="img-fluid" src="<?php echo $img ?>" alt="hero-image" />
                         <h2><?php the_title() ?></h2>
 
-                    </div>
+                    </a>
 
 
 
@@ -43,6 +43,7 @@
 
 <div class="container">
     <!-- latest-post description -->
+
 
 
 
@@ -84,7 +85,7 @@
                         <img class="img-fluid m-0" src='<?php echo $image ?>' alt="image" />
                         <div class="title">
                             <h1><?php the_title() ?></h1>
-                            <h3><?php echo $location; ?>, <?php echo get_the_category()[0]->name ?></h3>
+                            <h5><?php echo $location; ?>, <?php echo get_the_category()[0]->name ?></h5>
                         </div>
 
 
@@ -137,8 +138,9 @@
                     <a href="<?php echo get_permalink() ?>" class="col-11 col-md-5 m-3 p-0 post">
                         <img class="img-fluid" src='<?php echo $image ?>' alt="image" />
                         <div class="title">
-                            <h1><?php the_title() ?></h1>
-                            <h3><?php echo $location; ?>, <?php echo get_the_category()[0]->name ?></h3>
+                            <h2><?php the_title() ?></h2>
+                            <h3><?php echo get_the_date() ?></h3>
+
                         </div>
 
 
@@ -150,13 +152,32 @@
 
             <?php endwhile;
             endif; ?>
+            <a class="btn btn-primary view-all col-4 p-3 col-md-2 m-5">
+                View All
+            </a>
 
         </div>
+
+
+
+
+
+
+
     </section>
 
 
 
-
 </div>
+
+<section class="instagram text-center p-5 m-auto">
+
+    <h2 class="pb-4 w-50 title m-auto">INSTAGRAM</h2>
+
+    <div class="ins-posts">
+        <?php the_post(); ?>
+        <h2 class="text-center p-3"><?php echo get_field('instagram') ?></h2>
+    </div>
+</section>
 
 <?php get_footer(); ?>

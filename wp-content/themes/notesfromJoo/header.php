@@ -14,7 +14,7 @@
 
     <header class="text-center row m-auto justify-content-center">
 
-        <a class="m-5 col-12 col-md-6 col-lg-4" href="/"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/logo.png" alt="logo" /></a>
+        <a class="m-3 col-6 col-md-6 col-lg-4" href="/"><img class="img-fluid" src="<?php bloginfo('template_directory'); ?>/logo.png" alt="logo" /></a>
         <?php wp_nav_menu(
             array(
                 'container' => "nav",
